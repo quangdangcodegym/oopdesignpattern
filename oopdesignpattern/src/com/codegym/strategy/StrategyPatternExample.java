@@ -1,4 +1,4 @@
-package org.codegym.strategy;
+package com.codegym.strategy;
 
 public class StrategyPatternExample {
 	 

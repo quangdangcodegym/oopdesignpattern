@@ -1,4 +1,4 @@
-package org.codegym.strategy;
+package com.codegym.strategy;
 
 import java.util.List;
 
