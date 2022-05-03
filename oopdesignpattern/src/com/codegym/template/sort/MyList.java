@@ -2,6 +2,7 @@ package com.codegym.template.sort;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 public class MyList<E> {
@@ -39,6 +40,30 @@ public class MyList<E> {
     }
 
 
+    public MyListIterator<E> createIterator() {
+        MyListIterator<E> myListIterator = new MyListIterator<>();
+        return myListIterator;
+    }
+
+    private class MyListIterator<E> implements Iterator {
+
+        private int position;
+        @Override
+        public boolean hasNext() {
+            if (position < elements.length) {
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public Object next() {
+            if (this.hasNext()) {
+                return elements[position++];
+            }
+            return null;
+        }
+    }
     public MyList(int capacity) {
         elements = new Object[capacity];
     }

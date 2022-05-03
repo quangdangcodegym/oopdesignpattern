@@ -1,6 +1,7 @@
 package com.codegym.template.sort;
 
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,9 +11,18 @@ public class Main {
         shapes.add(new Rectangle(5, 8));
         shapes.add(new Rectangle(1, 6));
         shapes.add(new Rectangle(1, 1));
+        System.out.println("Using my Iterator");
 
-        shapes.printMyList();
-        shapes.sortComparable();
+        Iterator<Shape> iterator = shapes.createIterator();
+        while (iterator.hasNext()) {
+            Shape shape = iterator.next();
+            System.out.println("Iterator element: " + shape);
+        }
+
+        /*shapes.printMyList();
+        shapes.sortComparable();*/
+
+
 
 
         /*Comparator<Object> comparator = new Comparator<Object>() {
@@ -26,6 +36,6 @@ public class Main {
             }
         };
         shapes.sortComparator(comparator);*/
-        shapes.printMyList();
+        //shapes.printMyList();
     }
 }
