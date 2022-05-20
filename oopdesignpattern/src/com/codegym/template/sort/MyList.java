@@ -1,9 +1,7 @@
 package com.codegym.template.sort;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+
 
 public class MyList<E> {
     private int size = 0;
@@ -16,6 +14,9 @@ public class MyList<E> {
 
 
     public void sortComparable() {
+
+        List<String> s = new ArrayList<>();
+
         for (int i = 0; i < elements.length-1; i++) {
             for (int j = i+1; j < elements.length; j++) {
                 Comparable comparable = (Comparable) elements[i];
